@@ -1,11 +1,13 @@
+// Module Pattern
 'use strict';
 
 console.log('Starting');
 console.log('\n');
 
+// Entity to inject in the module
 let objectToInject = 'injected';
 
-// Module
+// Module begin
 let coolModule = (function(injection){
 
   let _privateVar1 = 1;
@@ -40,15 +42,19 @@ let coolModule = (function(injection){
   }
   
 })(objectToInject);
+// Module end
 
+// Testing the module
 
-
+// Accessing public properties
 coolModule.var1++;
 
 console.log(coolModule.method());
 console.log('public var: ' + coolModule.var1);
 console.log('\n');
 
+
+// Accessing private properties
 // console.log(coolModule._privateMethod1()); // Error
 console.log('private var: ' + coolModule._privateVar1); // undefined
 
